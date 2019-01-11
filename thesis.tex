@@ -1,0 +1,45 @@
+% Åbo Akademi University nonofficial LaTeX-tempate for PhD-theses
+% Contributed by Andreas Lundell, Anders Skjäl, Jan Kronqvist and others
+
+\documentclass[10pt, b5paper]{memoir}
+\input{style.tex}
+
+\begin{document}
+
+% *************** Front matter ***************
+\frontmatter
+\input{front.tex}
+
+% *************** Main matter ***************
+\mainmatter
+
+% It is easier to create a seperate tex-file for each chapter and then include them here
+
+\input{introduction/introduction.tex}
+
+\input{chapters/chapter1.tex}
+
+\input{chapters/chapter2.tex}
+
+
+% *************** Bibliography ***************
+%\bibliographystyle{unsrt} % for numbering within brackets
+\bibliographystyle{plainnat} % for author-year
+
+\bibliography{bibliography}
+
+% *************** Appendixes ***************
+%\appendix
+%\appendixpage*
+%\input{app1/app1.tex}
+
+
+% *************** Articles ***************
+
+% Remember to compile LaTeX twice to get everything working
+
+% Change the path to the included files and remember to update the roman numbering for each
+\articlenumbering{I}{-7cm}
+\includepdf[pages={1-}]{papers/paper1.pdf}
+
+\end{document}

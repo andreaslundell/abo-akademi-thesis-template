@@ -1,0 +1,78 @@
+% *************** Front matter ***************
+
+% ***************************************************
+% You should specify the contents of title page here
+% Then you can specify dedication page or disable it
+% ***************************************************
+
+% *************** Title page ***************
+\thispagestyle{empty}
+
+\begin{center}
+    \Huge
+    
+    \noindent The very long and very difficult thesis title should go here
+    
+    \vfill
+    \vfill
+    
+    \LARGE
+    \noindent Firstname Lastname
+    
+    \vfill
+    \vfill
+    
+    \includegraphics[width=0.38\textwidth]{sigill.png}
+    %0.4
+    
+    \vfill
+    
+    \large
+    
+    \noindent
+    PhD Thesis in Mathematics\\
+    Mathematics and Statistics\\
+    Faculty of Science and Engineering\\
+    {\AA}bo Akademi University\\
+    \vfill
+    {\AA}bo, Finland 2019
+
+\end{center}
+
+% Creates page with IBAN numbers
+
+\clearpage
+\thispagestyle{empty}
+
+\null\vfill
+
+\begin{center}
+   
+	978-952-12-3749-2 \\
+    978-952-12-3750-8 (pdf)\\
+	\vspace{5mm}
+	Painosalama Oy\\
+	{\AA}bo 2018
+\end{center}
+
+\clearpage
+
+% Creates the dedication page
+\input{preface/preface.tex}
+	
+\cleardoublepage
+
+% Includes the summary in Swedish
+\input{swedishsummary/swedishsummary.tex}
+
+\cleardoublepage
+
+% Creates the table of contents and list of figures and tables if needed
+
+\tableofcontents
+%\clearpage
+%\listoffigures
+%\clearpage
+%\listoftables
+
+% *************** End of front matter ***************

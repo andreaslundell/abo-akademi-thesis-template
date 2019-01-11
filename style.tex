@@ -1,0 +1,121 @@
+% *************** Document style definitions ***************
+
+% *************** Load packages ***************
+
+%\usepackage[english,swedish]{babel}
+\usepackage[english]{babel}
+
+\usepackage{microtype}
+
+% Used for generating dummy text, can be removed
+\usepackage{blindtext}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+% Defines the fonts
+\usepackage[]{kpfonts}
+\usepackage[T1]{fontenc}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning}
+\usepackage{pgfplots}
+
+% Used to include the papers
+\usepackage{pdfpages}
+
+\usepackage[small,bf]{caption}
+
+
+% ************** Included papers ***************
+
+% For creating the numbering between included papers 
+\newcommand{\articlenumbering}[2]{
+\cleardoublepage
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+	\node [shift={(-4 cm, #2)}]  at (current page.north east)
+  {
+	\begin{tikzpicture}[remember picture, overlay]
+    \draw[fill=black] (0,0) rectangle (4,3);
+		\node[draw=none,color=white] at (2.1,1.47) {\fontsize{25mm}{30mm}\selectfont #1};
+	\end{tikzpicture}
+	};
+\end{tikzpicture}
+\cleardoublepage
+}
+
+% For the bibliography
+%\usepackage[numbers, sort&compress]{natbib}
+\usepackage[square, comma, sort&compress]{natbib}
+
+% Defines special mathematical operators
+
+%\def\sgn{\mathop{\text{sgn}}}
+%\def\rad{\mathop{\text{rad}}}
+%\def\mid{\mathop{\text{mid}}}
+%\def\diag{\mathop{\text{diag}}}
+%\def\conc{\text{conc}}
+%\def\conv{\text{conv}}
+%\def\argmin{\mathop{\text{argmin}}}
+
+%\newcommand{\vect}[1]{\boldsymbol{#1}}
+
+
+% *************** Chapter and section style ***************
+
+% Uncomment for alternative style for chapter headings
+%\chapterstyle{veelo} 
+
+\newcommand{\chaptertitle}[1]{#1}
+\newcommand{\setchaptertitle}[1]{\renewcommand{\chaptertitle}{#1}}
+\makepagestyle{mypagestyle}
+
+% For verso pages
+\makeevenhead{mypagestyle}{\thepage}{}{\slshape CHAPTER \thechapter}
+
+% For recto pages
+\makeoddhead{mypagestyle}{\slshape\MakeUppercase \chaptertitle}{}{\thepage}
+
+% Activate your new pagestyle
+\pagestyle{mypagestyle}
+
+% *************** Page layout ***************
+
+\settypeblocksize{*}{32pc}{1.618}
+\settrimmedsize{250mm}{176mm}{*}
+\setlrmargins{*}{20mm}{*}
+%\setulmargins{27mm}{22mm}{*}
+\setulmarginsandblock{27mm}{22mm}{*}
+\setheadfoot{\onelineskip}{2\onelineskip}
+\setheaderspaces{*}{2\onelineskip}{*}
+\def\baselinestretch{1.1}
+
+\checkandfixthelayout
+
+% *************** Numbering ***************
+
+\numberwithin{equation}{chapter}
+%\numberwithin{equation}{section}
+
+\numberwithin{figure}{chapter}
+\numberwithin{table}{chapter}
+
+% *************** Defines theorems, etc. ***************
+
+%\newtheorem{theorem}{Theorem} % for numbering 1,2,3
+\newtheorem{theorem}{Theorem}[chapter] % for numbering 1.1,1.2
+%\newtheorem{theorem}{Theorem}[section] % for numbering 1.1.1,1.2.1
+
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{question}[theorem]{Question}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+% *************** End of document style definition ***************
