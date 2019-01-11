@@ -6,6 +6,6 @@ If you have suggestions please send them to the author at andreas.lundell[at]abo
 
 For an example see the PDF-file in the example folder.
 
-Changelog:
+## Changelog:
 
 11.01.2019 First release
